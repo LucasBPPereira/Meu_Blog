@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+header {
+    background-color: #343633;
+    height: 80px;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    background-color: #343633;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #7D70BA;
+}
+
+.logo::after {
+    display: block;
+    content: "";
+    position: relative;
+    top: -15px;
+    left: 2px;
+    height: 5px;
+    width: 0%;
+    border: 0;
+    border-bottom: 4px solid #7D70BA;
+}
+
+.logo:hover::after {
+    width: 84%;
+    transition: 1s ease-in-out;
+}
+
+#menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-bar {
+    display: block;
+    height: 3px;
+    width: 28px;
+    background-color: #DEDEE0;
+    margin: 5px auto;
+    border-radius: 3px;
+    transition: all 0.4s;
+}
+
+ul {    
+    list-style: none;
+}
+
+#tema {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+}
+
+#tema a {
+    text-decoration: none;
+    color: #DEDEE0;
+}
+
+#user-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 80px;
+    margin: 0 auto 0 850px;
+    height: 80px;
+    width: 20%;
+    background-color: #DEDEE0;
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    overflow-x: clip;
+}
+
+#user-login > span {
+    position: relative;
+    right: -100%;
+    text-align: center;
+}
+
+#user-login a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#user-login.aberto {
+    transition: .4s ease;
+    top: 80px;
+    opacity: 1;
+    box-shadow: 0 2px 5px 3px #3436332d;
+}
+
+#user-login.aberto > span {
+    transition: all .4s;
+    right: 0;
+}
+
+#user {
+    cursor: pointer;
+}
+
+#sectionOne {
+    background-color: #7D70BA;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 150px;
+}
+
+#containerSecOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 300px;
+}
+
+#containerSecOne h2 {
+    text-align: center;
+}
+
+#containerSecOne p {
+    margin: 0 40px;
+    text-align: center;
+}
+
+.inputPalaChav {
+    background-color: #DEDEE0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 4px;
+}
+
+.inputPalaChav label {
+    position: absolute;
+}
+
+.inputPalaChav input {
+    background-color: #DEDEE0;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* 
+
+FAZER INTERATIVIDADE COM O INPUT E O LABEL
+
+LABEL SOBE E FICA ENTRE A BORDA E O TAMANHO DA FONTE DIMINUI
+
+*/
+
+.inputPalaChav button {
+    height: 100%;
+    width: 120px;
+    border: none;
+    border-radius: 4px;
+}
+
+.inputPalaChav button > .span-btSearch {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.inputPalaChav button > i {
+    display: none;
+}
+
+/* Media Responsivo - Inicio */
+
+@media screen and (max-width: 1080px) {    
+    #user-login {
+        margin-left: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #user-login {
+        width: 100%;
+        right: 0;
+    }
+    .logo::after {
+        display: none;
+    }
+    #sectionOne {
+        padding: 0 100px;
+    }
+    .inputPalaChav label {
+        font-size: 14px;
+    }
+
+    .inputPalaChav button > .span-btSearch:nth-child(1) {
+        display: none;
+    }
+    .inputPalaChav button > i {
+        display: block;
+        width: 25px;
+        font-size: 25px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .logo {
+        width: 60%;
+    }
+    #menu {
+        display: block;
+    }
+    #menu.ativo .menu-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    #menu.ativo .menu-bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #menu.ativo .menu-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #tema {
+        position: fixed;
+        right: -150%;
+    }
+
+    #tema.ativo {
+        align-items: center;
+        flex-direction: column;
+        top: 80px;
+        right: 0;
+        background-color: #DEDEE0;
+        width: 100%;
+        height: 60%;
+        transition: all .5s ease;
+        box-shadow: 0 2px 5px 3px #3436332d;
+    }
+
+    #tema.ativo > li > a {
+        color: #343633;
+        font-weight: 500;
+    }
+
+    #sectionOne {
+        padding: 0 20px;
+    }
+
+    .inputPalaChav button > .span-btSearch {
+        display: none;
+    }
+
+    .inputPalaChav button > i {
+        display: block;
+        width: 25px;
+        font-size: 25px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+}
+
+/* Media Responsivo - Fim */
