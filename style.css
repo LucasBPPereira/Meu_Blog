@@ -12,7 +12,6 @@
 header {
     background-color: #343633;
     height: 80px;
-    padding: 5px;
 }
 
 nav {
@@ -143,6 +142,9 @@ ul {
 
 #containerSecOne h2 {
     text-align: center;
+    font-size: 32px;
+    color: #DEDEE0;
+    text-shadow: 0 0 5px #dedee018;
 }
 
 #containerSecOne p {
@@ -195,11 +197,126 @@ LABEL SOBE E FICA ENTRE A BORDA E O TAMANHO DA FONTE DIMINUI
     display: none;
 }
 
+#sectionTwo {
+    background-color: #DEDEE0;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerSectionTwo {    
+    position: relative;
+    padding: 20px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#containerSectionTwo h2 {
+    text-align: center;
+    color: #60AB9A;
+    font-size: 32px;
+}
+
+.bloco-back {
+    height: 100px;
+    width: 100px;
+}
+
+.bloco-back:nth-of-type(1) {
+    background-color: #343633;
+    position: absolute;
+    top: 120px;
+    left: -40px;
+    height: 150px;
+    width: 220px;
+    border-radius: 4px;    
+    box-shadow: -1px -1px 5px 2px #343633;
+}
+
+.bloco-back:nth-of-type(2) {
+    background-color: #7D70BA;
+    position: absolute;
+    bottom: 10px;
+    right: -20px;
+    box-shadow: 1px 1px 5px 2px #7D70BA;
+    border-radius: 6px;
+    height: 200px;
+    width: 150px;
+}
+
+#containerTemas {
+    background-color: #60AB9A;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
+    border-radius: 20px 10px;
+    position: relative;
+}
+
+.blocoTemas {
+    border-radius: 6px;
+    padding: 10px;
+    height: 180px;
+    width: 200px;
+}
+
+.blocoTemas:nth-of-type(1) {
+    background-color: #7d70ba7a;
+    transition: background-color .8s ease;
+}
+
+.blocoTemas:nth-of-type(1):hover {
+    background-color: #7d70ba;
+}
+
+.blocoTemas:nth-of-type(2) {
+    background-color: #dedee06c;
+    transition: background-color .8s ease;
+}
+
+.blocoTemas:nth-of-type(2):hover {
+    background-color: #DEDEE0;
+}
+
+.blocoTemas:nth-of-type(3) {
+    background-color: #34363370;
+    transition: background-color .8s ease;
+}
+
+.blocoTemas:nth-of-type(3):hover {
+    background-color: #343633;
+}
+
+.blocoTemas h3 {
+    padding-left: 20px;
+}
+
+.blocoTemas ol {
+    list-style: none;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 120px;
+}
+
 /* Media Responsivo - Inicio */
 
 @media screen and (max-width: 1080px) {    
     #user-login {
         margin-left: 600px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .bloco-back {
+        display: none;
     }
 }
 
@@ -227,6 +344,43 @@ LABEL SOBE E FICA ENTRE A BORDA E O TAMANHO DA FONTE DIMINUI
         font-size: 25px;
         margin: 0 auto;
         cursor: pointer;
+    }
+
+    .blocoTemas:nth-of-type(1) {
+        background-color: #7d70ba;
+    }
+    
+    .blocoTemas:nth-of-type(2) {
+        background-color: #dedee0;
+    }
+    
+    .blocoTemas:nth-of-type(3) {
+        background-color: #343633;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    #sectionOne {
+        height: 31.25rem;
+    }
+
+    #containerSecOne {
+        height: 25rem;
+    }
+
+    #sectionTwo {
+        height: 45.625rem;
+        transition: all 1s ease;
+    }
+
+    #containerSectionTwo {
+        height: 700px;
+        transition: all 1s ease;
+    }
+    #containerTemas {
+        height: 500px;
+        transition: all 1s ease;
     }
 }
 
@@ -286,6 +440,29 @@ LABEL SOBE E FICA ENTRE A BORDA E O TAMANHO DA FONTE DIMINUI
         font-size: 25px;
         margin: 0 auto;
         cursor: pointer;
+    }
+
+    #sectionTwo {
+        height: 55rem;
+        align-items: flex-end;
+    }
+
+    #containerSectionTwo {
+        height: 850px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0 0 0;
+    }
+
+    #containerSectionTwo h2 {
+        font-size: 1.625rem;
+    }
+
+    #containerTemas {
+        flex-direction: column;
+        height: 43.75rem;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
     }
 }
 
